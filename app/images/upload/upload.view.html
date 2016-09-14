@@ -1,0 +1,16 @@
+<div class="modal-header">
+	<button class="btn btn-default" ngf-select ng-model="vm.image" ngf-pattern="'image/*'"
+ngf-accept="'image/*'">Select Image</button>
+	<button type="button" data-dismiss="modal" class="close pull-right">&times;</button>
+</div>
+<div class="modal-body">
+	<img class="img-responsive center-block" ngf-thumbnail="vm.image">
+</div>
+<div class="modal-footer">
+	<button class="btn btn-default pull-left" ng-click="vm.cancel()">
+		Cancel
+	</butotn>
+	<button class="btn btn-primary" ng-disabled="! vm.image" ng-click="vm.ok()">
+		Confirm
+	</button>
+</div>

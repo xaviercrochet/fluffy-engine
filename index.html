@@ -1,0 +1,28 @@
+<html lang="eng" ng-app="imagesMgmtApp">
+	<head>
+		<script src="node_modules/angular/angular.js"></script>
+		<script src="node_modules/angular-route/angular-route.js"></script>
+		<script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+		<script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+		<script src="node_modules/ng-file-upload/dist/ng-file-upload.js"></script>
+		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+
+		<script src="app/app.module.js"></script>
+		<script src="app/app.controller.js"></script>
+		<script src="app/app.routes.js"></script>
+
+		<!-- services -->
+		<script src="app/services/image.service.js"></script>
+
+		<!-- image module -->
+		<script src="app/images/image.module.js"></script>
+		<script src="app/images/image-index.controller.js"></script>
+
+		<script src="app/images/upload/upload.module.js"></script>
+		<script src="app/images/upload/upload.controller.js"></script>
+	</head>
+	<body>
+		<div class="container" ng-view>
+		</div>
+	</body>
+</html>

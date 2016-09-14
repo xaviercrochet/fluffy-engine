@@ -1,0 +1,29 @@
+{
+  "name": "images-fe",
+  "version": "1.0.0",
+  "description": "Image Uploading Over SFTP - Front End",
+  "main": "app/app.module.js",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular-ui-bootstrap": "^2.1.3",
+    "angularjs": "0.0.1",
+    "bootstrap": "^3.3.7",
+    "ng-file-upload": "^12.2.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "http-server -p 8042",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xaviercrochet/fluffy-engine.git"
+  },
+  "author": "Xavier Crochet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xaviercrochet/fluffy-engine/issues"
+  },
+  "homepage": "https://github.com/xaviercrochet/fluffy-engine#readme"
+}
