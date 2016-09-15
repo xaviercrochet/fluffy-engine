@@ -1,18 +1,32 @@
 angular.module('imagesMgmtApp.images')
 	.controller('ImageIndexController', ImageIndexController);
 
-	function ImageIndexController(images, $uibModal, Upload){
+	function ImageIndexController(ImageService, images, $uibModal, $location, Upload){
 		var vm = this;
-		vm.images = images;
+		vm.images = format(images);
 
 		vm.openUploadModal = openUploadModal;
-		vm.generateImageUrl = generateImageUrl
+		vm.generateImageUrl = generateImageUrl;
+		vm.redirectToShowView = redirectToShowView;
+
+		function redirectToShowView(imageId){
+			$location.path('/' + imageId);
+		};
 		
+		function format(imagesArray) {
+			var numberOfRow = Math.floor(imagesArray.length/4);
+			var formatedArray = [];
+			for(var i = 0; i < numberOfRow; i ++){
+				formatedArray.push(imagesArray.slice(i*4, (i+1)*4));
+			}
+ 			return formatedArray;
+		}
 
 
 		function generateImageUrl(filename){
 			return 'http://lisadeb.com/images/'+filename;
 		}
+
 
 		function openUploadModal() {
 			var modalOptions = {
@@ -31,10 +45,12 @@ angular.module('imagesMgmtApp.images')
 					data: {
 						file: image
 					}
-				}).then(function(result){
-					// todo solve image rendering issue
-					vm.images.push(result.data);
-				})
+				}).then(function(response){
+					var imageId = response.data._id;
+					redirectToShowView(imageId);
+				}).catch(function(error){
+					console.error(error);
+				});
 			});
 		};
 	};

@@ -1,0 +1,9 @@
+<div class="row" style="margin-top: 10px;">
+	<p class="col-sm-6">Filename: {{vm.image.filename}}</p>
+	<button ng-click="vm.redirectToIndexPage()" class="btn col-sm-2 btn-default">Back</button>
+	<button class="btn btn-primary col-sm-2" ng-disabled="true">Change Image</button>
+	<button ng-click="vm.deleteImage()" class="btn btn-danger col-sm-2">Delete</button>
+</div>
+<div class="row" style="margin-top: 10px;">
+	<img class="img-responsive center-block col-sm-12" ng-src="{{vm.generateImageUrl()}}" style="max-height: 500px;"/>
+</div>

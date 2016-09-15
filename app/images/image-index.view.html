@@ -1,5 +1,7 @@
 <button class="btn btn-primary" ng-click="vm.openUploadModal()">Upload New Picture</button>
-
-<div class="row" ng-repeat="image in vm.images">
-	<img style="max-height: 250px; margin-top: 10px; margin-bottom: 10px;" class="img-responsive center-block" ng-src="{{vm.generateImageUrl(image.filename)}}"/>
+<div  class="row" ng-repeat="imageRow in vm.images">
+	<div ng-repeat="image in imageRow" class="col-sm-3 ">
+		<a href ng-click="vm.redirectToShowView(image._id)"><img style="max-height: 250px; margin-top: 10px; margin-bottom: 10px;" class="img-responsive center-block" ng-src="{{vm.generateImageUrl(image.filename)}}"/></a>
+	</div>
+	
 </div>

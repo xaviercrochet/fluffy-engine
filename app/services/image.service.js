@@ -18,7 +18,15 @@ angular.module('imagesMgmtApp')
 		};
 
 		function deleteImage(imageId) {
+			var url = apiEndpoint + "images/" + imageId;
 			var d = $q.defer();
+			$http.delete(url)
+				.success(function(data, status, headers, config) {
+					d.resolve(data);
+				})
+				.error(function(error){
+					d.reject(error);
+				});
 			return d.promise;
 		};
 
@@ -36,7 +44,15 @@ angular.module('imagesMgmtApp')
 		};
 
 		function getImage(imageId) {
+			var url = apiEndpoint +  "images/" + imageId;
 			var d = $q.defer();
+			$http.get(url)
+				.success(function(data, status, headers, config) {
+					d.resolve(data);
+				})
+				.error(function(error){
+					d.reject(error);
+				});
 			return d.promise;
 		};
 	};
