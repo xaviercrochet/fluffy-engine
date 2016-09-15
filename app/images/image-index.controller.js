@@ -3,6 +3,7 @@ angular.module('imagesMgmtApp.images')
 
 	function ImageIndexController(ImageService, images, $uibModal, $location, Upload){
 		var vm = this;
+		/* todo: display some error message when backend is down (images can't be retrieved) */
 		vm.images = format(images);
 
 		vm.openUploadModal = openUploadModal;
